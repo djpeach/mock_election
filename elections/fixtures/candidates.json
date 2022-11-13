@@ -1,0 +1,42 @@
+[
+{
+  "model": "elections.candidate",
+  "pk": 1,
+  "fields": {
+    "race": 2,
+    "name": "Garrett Peach",
+    "running_mate": 1,
+    "party": "DEMOCRAT"
+  }
+},
+{
+  "model": "elections.candidate",
+  "pk": 2,
+  "fields": {
+    "race": 2,
+    "name": "Ryan Eilenstine",
+    "running_mate": 3,
+    "party": "REPUBLICAN"
+  }
+},
+{
+  "model": "elections.candidate",
+  "pk": 3,
+  "fields": {
+    "race": 1,
+    "name": "Seth Bradley",
+    "running_mate": 4,
+    "party": "REPUBLICAN"
+  }
+},
+{
+  "model": "elections.candidate",
+  "pk": 4,
+  "fields": {
+    "race": 1,
+    "name": "Eva Campbell",
+    "running_mate": 2,
+    "party": "DEMOCRAT"
+  }
+}
+]

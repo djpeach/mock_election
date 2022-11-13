@@ -1,0 +1,18 @@
+[
+{
+  "model": "elections.race",
+  "pk": 1,
+  "fields": {
+    "name": "Period 1 Race",
+    "election": 1
+  }
+},
+{
+  "model": "elections.race",
+  "pk": 2,
+  "fields": {
+    "name": "Period 4 Race",
+    "election": 1
+  }
+}
+]

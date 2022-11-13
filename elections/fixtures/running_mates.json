@@ -1,0 +1,30 @@
+[
+{
+  "model": "elections.runningmate",
+  "pk": 1,
+  "fields": {
+    "name": "Ian Whitehead"
+  }
+},
+{
+  "model": "elections.runningmate",
+  "pk": 2,
+  "fields": {
+    "name": "Paige Vawter"
+  }
+},
+{
+  "model": "elections.runningmate",
+  "pk": 3,
+  "fields": {
+    "name": "Collin Smith"
+  }
+},
+{
+  "model": "elections.runningmate",
+  "pk": 4,
+  "fields": {
+    "name": "Jenry Henry"
+  }
+}
+]

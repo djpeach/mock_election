@@ -1,0 +1,9 @@
+[
+{
+  "model": "elections.election",
+  "pk": 1,
+  "fields": {
+    "name": "2022 Mock Election"
+  }
+}
+]
