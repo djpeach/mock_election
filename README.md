@@ -16,18 +16,26 @@ scp -r -i mock-election.pem {_config,elections,html-pages,Makefile,manage.py,req
 
 ## Manage server
 
-Run Gunicorn:
+Run Server:
+[(Create screen, run server, detach from screen)](https://stackoverflow.com/questions/1188542/django-runserver-permanent)
 ```bash
-gunicorn _config.wsgi -b 0.0.0.0:8000 --daemon
+screen -d -m python manage.py runserver 0.0.0.0:8000
 ```
 
-See Gunicorn Processes:
+Connect to screen
 ```bash
-ps ax | grep gunicorn
+screen -r
+```
+
+Stop server
+(after attaching to screen)
+```bash
+Ctrl + C
 ```
 
 
-Kill Gunicorn:
+Detach from screen
 ```bash
-pkill -f gunicorn
+Ctrl + A
+d
 ```
