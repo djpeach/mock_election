@@ -30,11 +30,11 @@ class Candidate(models.Model):
     @property
     def bootstrap_party_color(self):
         if self.party == self.PartyEnum.REPUBLICAN:
-            return 'danger'
+            return "danger"
         elif self.party == self.PartyEnum.DEMOCRAT:
-            return 'primary'
+            return "primary"
         else:
-            return 'secondary'
+            return "secondary"
 
     def __str__(self):
         return self.name
