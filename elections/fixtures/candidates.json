@@ -4,6 +4,7 @@
   "pk": 1,
   "fields": {
     "race": 2,
+    "bio": null,
     "name": "Garrett Peach",
     "running_mate": 1,
     "party": "DEMOCRAT"
@@ -14,6 +15,7 @@
   "pk": 2,
   "fields": {
     "race": 2,
+    "bio": null,
     "name": "Ryan Eilenstine",
     "running_mate": 3,
     "party": "REPUBLICAN"
@@ -24,6 +26,7 @@
   "pk": 3,
   "fields": {
     "race": 1,
+    "bio": null,
     "name": "Seth Bradley",
     "running_mate": 4,
     "party": "REPUBLICAN"
@@ -34,6 +37,7 @@
   "pk": 4,
   "fields": {
     "race": 1,
+    "bio": null,
     "name": "Eva Campbell",
     "running_mate": 2,
     "party": "DEMOCRAT"
