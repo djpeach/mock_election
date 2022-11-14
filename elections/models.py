@@ -17,7 +17,6 @@ class Race(models.Model):
 
 
 class Candidate(models.Model):
-
     class PartyEnum(models.TextChoices):
         REPUBLICAN = "REPUBLICAN", "Republican"
         DEMOCRAT = "DEMOCRAT", "Democrat"
@@ -53,4 +52,3 @@ class Vote(models.Model):
 
     def __str__(self):
         return f"{self.race.name}: {self.voter.name} - {self.candidate.name}"
-
