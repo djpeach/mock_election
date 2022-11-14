@@ -22,9 +22,19 @@ class Candidate(models.Model):
         DEMOCRAT = "DEMOCRAT", "Democrat"
 
     race = models.ForeignKey("Race", on_delete=models.CASCADE)
+    bio = models.TextField(blank=True, null=True)
     name = models.TextField()
     running_mate = models.OneToOneField("RunningMate", on_delete=models.PROTECT)
     party = models.TextField(choices=PartyEnum.choices)
+
+    @property
+    def bootstrap_party_color(self):
+        if self.party == self.PartyEnum.REPUBLICAN:
+            return 'danger'
+        elif self.party == self.PartyEnum.DEMOCRAT:
+            return 'primary'
+        else:
+            return 'secondary'
 
     def __str__(self):
         return self.name

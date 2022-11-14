@@ -1,8 +1,8 @@
 {% extends 'elections/base.html' %}
 
 {% block content %}
-  <div class="container mt-2 px-4">
-    <a class="fs-4" style="margin-left: -12px;" href="{% url 'results' %}">< Back to results</a>
+  <div class="container my-4 px-4">
+    <a class="fs-4" style="margin-left: -48px;" href="{% url 'results' %}">< Back to results</a>
     <form action="" method="POST">
       <!-- name step -->
       <div class="row mt-3">
@@ -11,9 +11,9 @@
       <div class="row mt-2 p-2">
         <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
           <option selected>Select your name</option>
-          <option value="GarretPeach">Garret Peach</option>
-          <option value="RachelPeach">Rachel Peach</option>
-          <option value="DanielPeach">Daniel Peach</option>
+          {% for voter in voters %}
+          <option value="{{ voter.name }}">{{ voter.name}}</option>
+          {% endfor %}
         </select>
       </div>
 
@@ -23,97 +23,37 @@
         <p class="lead">Please select a candidate for each race, and submit your vote.</p>
       </div>
 
-      <!-- candiate rows -->
-      <div class="row mt-3">
-        <h4>Period 1 Presidential Race</h4>
-      </div>
-      <div class="row mt-1 g-5 align-items-stretch">
-        <div class="col-12 mt-1 col-md-6 mt-md-0">
-          <label class="input-group flex-nowrap h-100" style="cursor: pointer;">
-            <div class="input-group-text">
-              <input class="form-check-input mt-0" name="race1Vote" type="radio" value=""
-                     aria-label="Radio button for following text input">
-            </div>
-            <div class="card border-danger text-danger">
-              <div class="card-body">
-                <h5 class="card-title">Garret Peach</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-                <ul class="list-group">
-                  <li class="list-group-item text-danger"><strong>Running Mate:</strong> Collin Matthews</li>
-                  <li class="list-group-item text-danger"><strong>Party Affiliation:</strong> Republican</li>
-                </ul>
-              </div>
-            </div>
-          </label>
+      <!-- race rows -->
+      {% for race in races %}
+        <div class="row mt-3">
+          <h4>{{ race.name }}</h4>
         </div>
-        <div class="col-12 mt-3 col-md-6 mt-md-0">
-          <label class="input-group flex-nowrap h-100" style="cursor: pointer">
-            <div class="input-group-text">
-              <input class="form-check-input mt-0" name="race1Vote" type="radio" value=""
-                     aria-label="Radio button for following text input">
+        <div class="row mt-1 g-5 align-items-stretch">
+          {% for candidate in race.candidate_set.all %}
+            <div class="col-12 mt-1 col-md-6 mt-md-0">
+              <label class="input-group flex-nowrap h-100" style="cursor: pointer;">
+                <div class="input-group-text">
+                  <input class="form-check-input mt-0" name="race1Vote" type="radio" value=""
+                         aria-label="Radio button for following text input">
+                </div>
+                <div
+                    class="card w-100 border-{{ candidate.bootstrap_party_color }} text-{{ candidate.bootstrap_party_color }}">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ candidate.name }}</h5>
+                    <p class="card-text"><strong>Bio: </strong>{{ candidate.bio }}</p>
+                    <ul class="list-group">
+                      <li class="list-group-item text-{{ candidate.bootstrap_party_color }}"><strong>Running
+                        Mate:</strong> {{ candidate.running_mate.name }}</li>
+                      <li class="list-group-item text-{{ candidate.bootstrap_party_color }}"><strong>Party
+                        Affiliation:</strong> {{ candidate.party }}</li>
+                    </ul>
+                  </div>
+                </div>
+              </label>
             </div>
-            <div class="card border-primary text-primary">
-              <div class="card-body">
-                <h5 class="card-title">Garret Peach</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-                <ul class="list-group">
-                  <li class="list-group-item text-primary"><strong>Running Mate:</strong> Collin Matthews</li>
-                  <li class="list-group-item text-primary"><strong>Party Affiliation:</strong> Democrat</li>
-                </ul>
-              </div>
-            </div>
-          </label>
+          {% endfor %}
         </div>
-      </div>
-      <div class="row mt-5">
-        <h4>Period 2 Presidential Race</h4>
-      </div>
-      <div class="row mt-1 g-5 align-items-stretch">
-        <div class="col-12 mt-1 col-md-6 mt-md-0">
-          <label class="input-group flex-nowrap h-100" style="cursor: pointer;">
-            <div class="input-group-text">
-              <input class="form-check-input mt-0" name="race2Vote" type="radio" value=""
-                     aria-label="Radio button for following text input">
-            </div>
-            <div class="card border-danger text-danger">
-              <div class="card-body">
-                <h5 class="card-title">Garret Peach</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-                <ul class="list-group">
-                  <li class="list-group-item text-danger"><strong>Running Mate:</strong> Collin Matthews</li>
-                  <li class="list-group-item text-danger"><strong>Party Affiliation:</strong> Republican</li>
-                </ul>
-              </div>
-            </div>
-          </label>
-        </div>
-        <div class="col-12 mt-3 col-md-6 mt-md-0">
-          <label class="input-group flex-nowrap h-100" style="cursor: pointer">
-            <div class="input-group-text">
-              <input class="form-check-input mt-0" name="race2Vote" type="radio" value=""
-                     aria-label="Radio button for following text input">
-            </div>
-            <div class="card border-primary text-primary">
-              <div class="card-body">
-                <h5 class="card-title">Garret Peach</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's
-                  content.</p>
-                <ul class="list-group">
-                  <li class="list-group-item text-primary"><strong>Running Mate:</strong> Collin Matthews</li>
-                  <li class="list-group-item text-primary"><strong>Party Affiliation:</strong> Democrat</li>
-                </ul>
-              </div>
-            </div>
-          </label>
-        </div>
-      </div>
+      {% endfor %}
 
       <!-- submit step -->
       <div class="row mt-5">
