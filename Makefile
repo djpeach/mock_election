@@ -12,7 +12,7 @@ data-populate:
 	python manage.py loaddata auth
 	python manage.py loaddata elections
 	python manage.py loaddata races
-	python manage.py loaddata candidates
 	python manage.py loaddata running_mates
+	python manage.py loaddata candidates
 	python manage.py loaddata voters
-	python manage.py loaddata votes
+	#python manage.py loaddata votes
