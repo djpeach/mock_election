@@ -1,0 +1,38 @@
+.election-bar > h1 {
+  flex-basis: 33.33%;
+}
+
+.election-bar > h1:nth-of-type(2) {
+  text-align: center;
+}
+
+.election-bar > h1:nth-of-type(3) {
+  text-align: right;
+}
+
+.election-bar {
+  padding: 10px;
+}
+
+.header {
+  padding: 60px;
+  text-align: center;
+  background-color: rgb(28, 21, 226);
+  color: white;
+  font-size: 30px;
+}
+.submit {
+  margin: 300px;
+  position: absolute;
+  right: 0;
+}
+
+.bio {
+  margin: 30px;
+  padding: 10px;
+  flex-basis: 25%;
+}
+
+.ballot {
+  padding: 25px;
+}
