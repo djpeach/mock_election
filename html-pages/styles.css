@@ -6,28 +6,4 @@
   text-align: center;
 }
 
-.election-bar > h1:nth-of-type(3) {
-  text-align: right;
-}
 
-.election-bar {
-  padding: 10px;
-}
-
-.header {
-  padding: 60px;
-  text-align: center;
-  background-color: rgb(28, 21, 226);
-  color: white;
-  font-size: 30px;
-}
-
-.bio {
-  margin: 30px;
-  padding: 10px;
-  flex-basis: 25%;
-}
-
-.ballot {
-  padding: 25px;
-}
