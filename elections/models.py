@@ -41,7 +41,6 @@ class Candidate(models.Model):
     def vote_percentage(self):
         total_race_votes = Race.objects.get(pk=self.race.id).vote_set.all().count()
         my_votes = self.vote_set.all().count()
-        print(total_race_votes, my_votes)
         if total_race_votes > 0:
             return my_votes / total_race_votes * 100
         else:
