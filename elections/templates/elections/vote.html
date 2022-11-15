@@ -4,8 +4,8 @@
   <div class="container my-4 px-4">
     <a class="fs-4" style="margin-left: -48px;" href="{% url 'results' %}">< Back to results</a>
   {% if error %}
-  <div class="alert alert-{{ error_level }} d-flex align-items-center" role="alert">
-    <p>{{ error }}</p>
+  <div class="alert alert-{{ error_level }} my-3" role="alert">
+    <p class="m-0">{{ error }}</p>
   </div>
   {% endif %}
     <form action="" method="POST">
@@ -41,7 +41,7 @@
             <div class="col-12 mt-1 col-md-6 mt-md-0">
               <label class="input-group flex-nowrap h-100" style="cursor: pointer;">
                 <div class="input-group-text">
-                  <input class="form-check-input mt-0" name="candidateIdRace{{ race.id }}" type="radio" value="{{ candidate.id }}">
+                  <input required class="form-check-input mt-0" name="candidateIdRace{{ race.id }}" type="radio" value="{{ candidate.id }}">
                 </div>
                 <div
                     class="card w-100 border-{{ candidate.bootstrap_party_color }} text-{{ candidate.bootstrap_party_color }}">

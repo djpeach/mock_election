@@ -71,4 +71,4 @@ class Vote(models.Model):
     session_id = models.CharField(max_length=32)
 
     def __str__(self):
-        return f"{self.race.name}: {self.voter.name} - {self.candidate.name}"
+        return f"{self.voter.name} - {self.candidate.name} ({self.race.name})"
